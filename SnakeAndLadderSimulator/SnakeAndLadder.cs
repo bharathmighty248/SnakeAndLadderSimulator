@@ -7,6 +7,7 @@ namespace SnakeAndLadderSimulator
     class SnakeAndLadder
     {
         int position = 0;
+        int dieCount = 0;
 
         public void PlayerPosition()
         {
@@ -14,6 +15,7 @@ namespace SnakeAndLadderSimulator
             {
                 Random random = new Random();
                 int die = random.Next(1, 7);
+                dieCount += 1; //Counting How Many Times Dice Was Played
                 int option = random.Next(0, 3);
                 switch (option)
                 {
@@ -33,8 +35,10 @@ namespace SnakeAndLadderSimulator
                     position -= die; //He Will Get Back To Previous Position
                 else if (position == 100)
                     break;
+                Console.WriteLine("Position of Player : " + position);
             }
-            Console.WriteLine("Position of Player : " + position);
+            Console.WriteLine("Player Reached Winning Position : " + position);
+            Console.WriteLine("Count Of Dice Played to Win the Game is : " + dieCount);
         }
     }
 }
