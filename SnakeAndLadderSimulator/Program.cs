@@ -6,7 +6,8 @@ namespace SnakeAndLadderSimulator
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to Snake And Ladder Simulator");
+            SnakeAndLadder Player = new SnakeAndLadder();
+            Player.PlayerPosition();
         }
     }
 }
