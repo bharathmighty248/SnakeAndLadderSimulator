@@ -10,7 +10,10 @@ namespace SnakeAndLadderSimulator
 
         public void PlayerPosition()
         {
-            Console.WriteLine("Player Position is : " + position);
+            Random random = new Random();
+            int die = random.Next(1, 7);
+            position = position + die;
+            Console.WriteLine("Position of Player : " + position);
         }
     }
 }
