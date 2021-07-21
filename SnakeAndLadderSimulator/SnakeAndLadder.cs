@@ -10,7 +10,7 @@ namespace SnakeAndLadderSimulator
 
         public void PlayerPosition()
         {
-            while (position <= 100)
+            while (true)
             {
                 Random random = new Random();
                 int die = random.Next(1, 7);
@@ -29,7 +29,10 @@ namespace SnakeAndLadderSimulator
                         position = position;
                         break;
                 }
-
+                if (position > 100) //If Player Goes Above 100
+                    position -= die; //He Will Get Back To Previous Position
+                else if (position == 100)
+                    break;
             }
             Console.WriteLine("Position of Player : " + position);
         }
