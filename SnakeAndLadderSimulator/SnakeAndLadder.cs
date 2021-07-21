@@ -10,22 +10,25 @@ namespace SnakeAndLadderSimulator
 
         public void PlayerPosition()
         {
-            Random random = new Random();
-            int die = random.Next(1, 7);
-            int option = random.Next(0, 3);
-            switch (option)
+            while (position <= 100)
             {
-                case 1:
-                    position += die;
-                    break;
-                case 2:
-                    position -= die;
-                    if (position < 0)
-                        position = 0;
-                    break;
-                default:
-                    position = position;
-                    break;
+                Random random = new Random();
+                int die = random.Next(1, 7);
+                int option = random.Next(0, 3);
+                switch (option)
+                {
+                    case 1:
+                        position += die;
+                        break;
+                    case 2:
+                        position -= die;
+                        if (position < 0)
+                            position = 0;
+                        break;
+                    default:
+                        position = position;
+                        break;
+                }
 
             }
             Console.WriteLine("Position of Player : " + position);
